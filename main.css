@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+:root{
+    --linear-color: linear-gradient(to right, rgba(109,191,248,255),rgba(159,127,247,255));
+    --primary-bg: rgba(24,24,36,255);
+    --primary-color: rgba(37,39,60,255);
+    --font-color: rgb(218 219 228);
+    --border-color: #444c57;
+    --hover-color: #444c57;
+}
+.light-theme{
+    --primary-bg: rgba(250,250,250,255);
+    --primary-color: white;
+    --font-color : rgba(86,87,106,255);
+    --border-color: rgba(231,231,234,255);
+    --hover-color: black;
+}
+body{
+    font-family: Tahoma, Arial;
+    background-color: var(--primary-bg);
+    position: relative;
+}
+.img{
+    height: 260px;
+}
+.img img{
+    height: 100%;
+    width: 100%;
+}
+.name{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+.container{
+    margin: 0 auto;
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 35%;
+}
+@media(max-width: 767px){
+    .container{
+        width: 80%;
+    }
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.color .fa-sun,
+.color .fa-moon{
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+}
+.input{
+    position: relative;
+}
+.input input[type="text"]{
+    background-color: var(--primary-color);
+    width: 88%;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    margin: 20px 0;
+    padding-left: 50px;
+    font-size: 15px;
+    color: var(--font-color);
+    box-shadow: 0px 5px 11px 3px rgba(0,0,0,0.4);
+}
+.input::before{
+    position: absolute;
+    content: '';
+    width: 17px;
+    height: 17px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    top: 32px;
+    left: 16px;
+}
+.input input[type="text"]:focus{
+    outline: none;
+}
+.input input[type="text"]::placeholder{
+    color: rgba(150,152,177,255);
+}
+.message{
+    position: absolute;
+    width: 185px;
+    height: 33px;
+    right: 63px;
+    top: -25px;
+    background-color: var(--primary-color);
+    border-radius: 7px;
+    font-size: 14px;
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.message::before{
+    content: '';
+    position: absolute;
+    border: 9px solid;
+    border-color:var(--primary-color) transparent transparent transparent;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.message i{
+    font-weight: 900;
+    margin-right: 5px;
+}
+@media(max-width: 767px){
+    .message{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+button{
+    box-shadow: 0px 5px 11px 3px rgba(0,0,0,0.3);
+    height: 45px;
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    width: 50px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background: linear-gradient(to right, rgba(153,136,248,255), rgba(128,189,244,255));
+    color: white;
+}
+.list{
+    background-color: var(--primary-color);
+    border-radius: 7px;
+    font-size: 15px;
+    color: var(--font-color);
+    box-shadow: 0px 1px 23px 3px rgba(0,0,0,0.2);
+}
+.list .task{
+    padding: 25px;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+.task input[type="checkbox"]{
+    -webkit-appearance: none;
+    appearance: none;
+}
+.task label{
+    padding: 15px 0;
+    position: relative;
+    left: 19px;
+    padding-left: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+.deleted-text {
+    text-decoration: line-through;
+    color: var(--border-color);
+}
+.task label::before{
+    position: absolute;
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    left: -25px;
+    cursor: pointer;
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.7;
+}
+.task label .wrong{
+    position: absolute;
+    font-family: var(--fa-style-family-classic);
+    font-weight: 900;
+    right: 11px;
+    font-size: 18px;
+    color: var(--border-color);
+    width: 20px;
+    display: none;
+}
+.task label:hover .wrong{
+    display: inline-block;
+}
+.task input[type="checkbox"]:checked + label::before{
+    font-family: var(--fa-style-family-classic);
+    content: "\f00c";
+    font-weight: 900;
+    background: var(--linear-color);
+    border: none;
+}
+.footer{
+    padding: 20px 20px 35px;
+    font-size: 14px;
+    color: #535d6a;
+}
+.footer .on{
+    color: rgba(69,110,212,255);
+}
+.footer .choice{
+    gap: 10px;
+    display: flex;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.total{
+    float: left;
+}
+.clear{
+    float: right;
+}
+.footer .choice span,
+.clear{
+    cursor: pointer;
+}
+.footer .choice span:hover,
+.clear:hover{
+    color: var(--hover-color);
+}
+@media(max-width: 767px){
+    .footer .choice{
+        width: 100%;
+        height: 45px;
+        background-color: var(--primary-color);
+        border-radius: 7px;
+        bottom: -60px;
+        align-items: center;
+        justify-content: center;
+    } 
+}

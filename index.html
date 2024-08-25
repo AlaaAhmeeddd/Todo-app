@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="img">
+        <img src="" alt="" class="transition">
+    </div>
+    <div class="container">
+        <div class="head">
+            <p class="name">Todo</p>
+            <div class="color">
+                <i class="fa-regular fa-sun" id="toggle"></i>
+            </div>
+        </div>
+        <div class="input" id="element">
+            <input type="text" name="" id="write" placeholder="Create a new todo...">
+            <button>Add</button>
+            <div class="message">
+                <i class="fa-regular fa-circle-exclamation"></i>
+                Enter a valid text to add
+            </div>
+        </div>
+        <div class="list">
+            <div class="footer">
+                <span class="total"> </span>
+                <div class="choice">
+                    <span class="all on">All</span>
+                    <span class="active">Active</span>
+                    <span class="completed">Completed</span>
+                </div>
+                <span class="clear">Clear completed</span>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
